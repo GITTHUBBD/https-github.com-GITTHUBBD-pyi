@@ -13,9 +13,7 @@
     include-prerelease: # optional
     - name: Run Parasoft Jtest
   # You may pin to the exact commit or the version.
-  # uses: parasoft/run-jtest-action@8883f9f725f0b161ceb49364714a3f8d15502587
- uses: parasoft/run-jtest-action@0.0.2 
-  with:
+  # uses: parasoft/run-jtest-action@8883f9f725f0b161ceb49364714a3f8d15502587with:
     # Installation folder of Parasoft Jtest. If not specified, the cpptestcli executable must be added to PATH.
     installDir: # optional
     # Working directory for running Jtest.
@@ -30,8 +28,8 @@
     input: # optional, default is jtest.data.json
     # Additional parameters for the jtestcli executable.
     additionalParams: # optional, default is 
-    - name: Deploy WordPress to WP Engine
-  uses: wpengine/github-action-wpe-site-deploy@v.2.3.3
+    - name: Deploy WordPress to WP Engineuses: 
+    wpengine/github-action-wpe-site-deploy@v.2.3.3
 codeql-analysis.yml 
 .cont
     
