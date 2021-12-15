@@ -1,21 +1,38 @@
-- name: QR Code Generator
+- name: PyInstaller ManyLinux 2.24 Docker Action
   # You may pin to the exact commit or the version.
-  # uses: snow-actions/qrcode@877cf2ff30f82f842921ebca32aeecdc06a99f67
-  uses: snow-actions/qrcode@v1.0.0
+  # uses: oleksis/pyinstaller-manylinux@81fe5507738a2dc87ddca0ead4e99916aa007382
+  uses: oleksis/pyinstaller-manylinux@v2.1.2
   with:
-    # Text to encode.
-    text: 
-    # Path where to save the file.
-Recognized extensions are png, svg, txt.
-    path: # default is qrcode.png
-    - name: S3 Copy to specific destination
+    # List of parameters for pyinstaller
+    pyinstaller-params: 
+    - name: Deploy 42maru package to 42maru pypi server
   # You may pin to the exact commit or the version.
-  # uses: luke-m/s3-cp-action@4f84902f8a893fd30c67b25e9393c7bb9d3e0d91
-  uses: luke-m/s3-cp-action@v0.3.0
-  - name: Notify PR
+  # uses: sunny4249/autodeploy@ac53d9d1654aea5bfaa5b5768d9a8f55681779ba
+  true: 
+  'sunny4249/autodeploy@v0.0.2 
+
+    # Default GitHub Action token, used for the authenticate about user. \ Can be passed in using {{ secrets.SECRET_TOKEN }}
+    token: 
+    # Package Name
+    package_name: 
+    - name: 42Crunch REST API Static Security Testing
   # You may pin to the exact commit or the version.
-  # uses: okteto/notify-pr@1372ddd587e781f2f995b1f612221f039cfedc50
-  uses: okteto/notify-pr@v1.0
+  # uses: 42Crunch/api-security-audit-action@008873702035ef06320d7b77fb6501fb5dcbc5d3
+  uses: 42Crunch/api-security-audit-action@v2
   with:
-    # The message
-    message: # default is Your preview environment is ready
+    # The API token to access 42Crunch Platform. Please create free account at https://platform.42crunch.com/register and follow hese steps to configure API_TOKEN https://docs.42crunch.com/latest/content/tasks/integrate_github_actions.htm
+    api-token: # optional
+    # Minimum score for OpenAPI files.
+    min-score: # optional, default is 75
+    # 42Crunch platform URL
+    platform-url: # optional, default is https://platform.42crunch.com
+    # Log level, one of: FATAL, ERROR, WARN, INFO, DEBUG
+    log-level: # optional, default is INFO
+    # Share new API collections with everyone, one of: OFF, READ_ONLY, READ_WRITE
+    share-everyone: # optional, default is OFF
+    # GitHub token for uploading results to Github Code Scanning
+    github-token: # optional, default is ${{ github.token }}
+    # Upload results to Github Code Scanning
+    upload-to-code-scanning: # optional, default is true
+    # Do not fail the action even if the faiures were detected in the API contract
+    ignore-failures: # optional, default is true 
